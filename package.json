@@ -1,0 +1,84 @@
+{
+  "name": "atp-visualizer",
+  "publisher": "manuelcecchetto",
+  "displayName": "ATP Visualizer",
+  "description": "Visualize ATP plan graphs inside VS Code.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Visualization"
+  ],
+  "keywords": [
+    "atp",
+    "workflow",
+    "planner",
+    "graph",
+    "visualization"
+  ],
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manuelcecchetto/atp-visualizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manuelcecchetto/atp-visualizer/issues"
+  },
+  "homepage": "https://github.com/manuelcecchetto/atp-visualizer#readme",
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:json",
+    "onCommand:atp-visualizer.openVisualizer",
+    "onCommand:atp-visualizer.refresh"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "atp-visualizer.openVisualizer",
+        "title": "ATP Visualizer: Open"
+      },
+      {
+        "command": "atp-visualizer.refresh",
+        "title": "ATP Visualizer: Refresh"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "webpack --config webpack.config.js",
+    "watch": "webpack --config webpack.config.js --watch",
+    "package": "webpack --mode production --config webpack.config.js --devtool hidden-source-map",
+    "vscode:prepublish": "pnpm run package",
+    "lint": "eslint src webview-ui/src",
+    "test": "pnpm run compile"
+  },
+  "devDependencies": {
+    "@types/assert": "^1.5.11",
+    "@types/dagre": "^0.7.53",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/vscode": "~1.100.0",
+    "@types/webpack-env": "^1.18.8",
+    "@vscode/test-web": "^0.0.75",
+    "assert": "^2.1.0",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.39.1",
+    "mocha": "^11.7.5",
+    "process": "^0.11.10",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.4",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.3",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "dagre": "^0.8.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "reactflow": "^11.11.4"
+  }
+}

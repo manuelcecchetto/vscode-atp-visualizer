@@ -1,5 +1,7 @@
 # ATP Visualizer
 
+![ATP Visualizer graph](graph.png)
+
 Visualize [ATP](https://github.com/manuelcecchetto/atp) plan graphs directly inside VS Code.
 
 This extension renders `*.atp.json` plans as an interactive React Flow canvas, with a focused node details card and theming that matches your editor.
